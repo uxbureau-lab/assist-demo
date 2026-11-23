@@ -137,6 +137,7 @@ export const RECORDS: SourceRecord[] = [
       ["Volume", "1.2 GB"],
       ["Roaming pack active", "No"],
       ["Tariff applied", "Pay-as-you-go, ₴150 per GB"],
+      ["Roaming charges in the previous 12 months", "None"],
     ],
   },
   {
@@ -240,9 +241,9 @@ export const RECORDS: SourceRecord[] = [
     lines: [
       {
         id: "§1",
-        label: "First roaming bill",
+        label: "First roaming charge",
         value:
-          "If a customer's first roaming charge exceeds their plan fee by surprise, a one-off credit of up to 50% of that charge may be applied, capped at ₴100.",
+          "If a customer is charged for pay-as-you-go roaming for the first time in 12 months and the charge is over ₴100, a one-off credit of up to 50% of that charge may be applied, capped at ₴100. This applies even if the roaming welcome SMS was delivered.",
       },
       {
         id: "§2",

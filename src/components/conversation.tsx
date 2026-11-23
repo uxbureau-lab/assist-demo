@@ -19,7 +19,10 @@ export interface Message {
 }
 
 const SUGGESTIONS: Record<string, string[]> = {
-  "C-1001": ["Why is October's bill ₴430?", "Prepare the goodwill credit"],
+  "C-1001": [
+    "Why is October's bill ₴430?",
+    "Is she eligible for a goodwill credit?",
+  ],
   "C-1002": ["He says he had no network for three days. What can we do?"],
   "C-1003": [
     "She wants a cheaper plan. What fits?",

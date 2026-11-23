@@ -12,11 +12,11 @@ Plus an activity log of every read, proposal and decision.
 
 ## Scenarios
 
-| Customer        | Question                                                  | What it demonstrates                                                                                                    |
-| --------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Olena Kovalenko | Why is October's bill ₴430? → Prepare the goodwill credit | Evidence chain across invoice, usage, SMS and policy. A ₴90 credit above the ₴50 limit waits for confirmation           |
-| Andrii Melnyk   | No network for three days                                 | Incident matched to his home area, compensation computed from policy, ₴45 credit applied automatically within the limit |
-| Iryna Bondar    | She wants a cheaper plan                                  | The assistant holds back: the data can't tell whether the second SIM is still needed, and the saving depends on it      |
+| Customer        | Question                                                             | What it demonstrates                                                                                                    |
+| --------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Olena Kovalenko | Why is October's bill ₴430? → Is she eligible for a goodwill credit? | Evidence chain across invoice, usage, SMS and policy. A ₴90 credit above the ₴50 limit waits for confirmation           |
+| Andrii Melnyk   | No network for three days                                            | Incident matched to his home area, compensation computed from policy, ₴45 credit applied automatically within the limit |
+| Iryna Bondar    | She wants a cheaper plan                                             | The assistant holds back: the data can't tell whether the second SIM is still needed, and the saving depends on it      |
 
 ## Modes
 
