@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { DEFAULT_AUTONOMY } from "@/lib/autonomy";
 import { CUSTOMERS } from "@/lib/data";
 import type {
@@ -58,6 +58,13 @@ export function Console() {
   const [mode, setMode] = useState<"live" | "scripted" | null>(null);
   const [busy, setBusy] = useState(false);
   const sideRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    fetch("/api/status")
+      .then((r) => r.json())
+      .then((d) => setMode(d.mode))
+      .catch(() => {});
+  }, []);
 
   const thread = useMemo(
     () => threads[customerId] ?? [],
