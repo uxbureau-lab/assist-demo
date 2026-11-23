@@ -31,7 +31,7 @@ const statusLine = (a: ProposedAction | undefined, what: string) => {
 const SCRIPTS: Script[] = [
   {
     customerId: "C-1001",
-    match: /credit|offer|goodwill|compensat|prepare|yes/i,
+    match: /credit|offer|goodwill|compensat|prepare|eligible|check|yes/i,
     steps: [
       { tool: "search_policies", input: { query: "goodwill credit roaming" } },
       {
@@ -39,7 +39,7 @@ const SCRIPTS: Script[] = [
         input: {
           amount: 90,
           reason:
-            "First roaming charge, ₴180 [[INV-1001-2026-10#L2]]. Policy allows up to 50%, capped at ₴100 [[POL-GOODWILL-01#§1]].",
+            "First pay-as-you-go roaming charge in 12 months [[USG-1001-R10]], ₴180 [[INV-1001-2026-10#L2]]. Policy allows up to 50%, capped at ₴100 [[POL-GOODWILL-01#§1]].",
           policy_ref: "POL-GOODWILL-01 §1",
         },
       },
@@ -53,7 +53,7 @@ const SCRIPTS: Script[] = [
       },
       {
         say: (a) =>
-          `She qualifies for a one-off goodwill credit of up to 50% of the roaming charge, capped at ₴100 [[POL-GOODWILL-01#§1]]. Half of ₴180 is ₴90.\n\n${statusLine(a[0], "the ₴90 credit")} ${a[1]?.status === "pending" ? "I've also drafted an SMS that confirms the credit and mentions the EU Travel 7 pack [[POL-ROAM-02#§3]]: for her next trip, 5 GB would cost ₴120 instead of ₴750 at pay-as-you-go rates." : ""}\n\nThis credit can be used once per 12 months [[POL-GOODWILL-01#§2]].`,
+          `Yes. It is her first pay-as-you-go roaming charge in 12 months [[USG-1001-R10]] and it is over ₴100, so she qualifies for a one-off credit of up to 50%, capped at ₴100 [[POL-GOODWILL-01#§1]]. The delivered welcome SMS doesn't change that. Half of ₴180 is ₴90.\n\n${statusLine(a[0], "the ₴90 credit")} ${a[1]?.status === "pending" ? "I've also drafted an SMS that confirms the credit and mentions the EU Travel 7 pack [[POL-ROAM-02#§3]]: for her next trip, 5 GB would cost ₴120 instead of ₴750 at pay-as-you-go rates." : ""}\n\nThis credit can be used once per 12 months [[POL-GOODWILL-01#§2]].`,
       },
     ],
   },
@@ -65,7 +65,7 @@ const SCRIPTS: Script[] = [
       { tool: "get_usage" },
       { tool: "search_policies", input: { query: "roaming charges" } },
       {
-        say: "October's bill is ₴430: the usual ₴250 plan fee [[INV-1001-2026-10#L1]] plus ₴180 for roaming data in Poland [[INV-1001-2026-10#L2]].\n\nShe used 1.2 GB in Poland on 12–15 October without a roaming pack [[USG-1001-R10]], so pay-as-you-go applied at ₴150 per GB [[POL-ROAM-02#§1]]. A welcome SMS with the price and a pack offer was delivered on 12 October at 08:14 [[SMS-1001-1012]]. The charge is correct.\n\nSeptember was the plan fee only [[INV-1001-2026-09#L1]], so this is her first roaming charge. That makes her eligible for a goodwill credit [[POL-GOODWILL-01#§1]]. Shall I prepare it?",
+        say: "October's bill is ₴430: the usual ₴250 plan fee [[INV-1001-2026-10#L1]] plus ₴180 for roaming data in Poland [[INV-1001-2026-10#L2]].\n\nShe used 1.2 GB in Poland on 12–15 October without a roaming pack [[USG-1001-R10]], so pay-as-you-go applied at ₴150 per GB [[POL-ROAM-02#§1]]. A welcome SMS with the price and a pack offer was delivered on 12 October at 08:14 [[SMS-1001-1012]]. The charge is correct.\n\nSeptember was the plan fee only [[INV-1001-2026-09#L1]], and she had no roaming charges in the previous 12 months [[USG-1001-R10]]. That may make her eligible for a goodwill credit [[POL-GOODWILL-01#§1]]. Shall I check?",
       },
     ],
   },
